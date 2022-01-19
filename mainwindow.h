@@ -4,6 +4,10 @@
 #include <QMainWindow>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
+#include <QObject>
+#include <QtWebChannel/QWebChannel>
+#include <QUrl>
+#include <QMessageBox>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,10 +21,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void replyFinish(QNetworkReply *reply);
-
 private slots:
     void on_pB_cons_clicked();
+    void replyFinished();
 
 private:
     Ui::MainWindow *ui;
