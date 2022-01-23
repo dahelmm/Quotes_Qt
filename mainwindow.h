@@ -8,6 +8,7 @@
 #include <QtWebChannel/QWebChannel>
 #include <QUrl>
 #include <QMessageBox>
+#include <QOAuth2AuthorizationCodeFlow>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -37,5 +38,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     interface *plugin;
+    QOAuth2AuthorizationCodeFlow *tin;
+
 };
 #endif // MAINWINDOW_H

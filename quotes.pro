@@ -1,4 +1,4 @@
-QT       += core gui network
+QT       += core gui network networkauth
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -16,12 +16,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp \
-    plugininterfaces.cpp
+    mainwindow.cpp
 
 HEADERS += \
-    mainwindow.h \
-    plugininterfaces.h
+    mainwindow.h
 
 FORMS += \
     mainwindow.ui
