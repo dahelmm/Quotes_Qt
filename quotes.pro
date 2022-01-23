@@ -16,10 +16,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    plugininterfaces.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    plugininterfaces.h
 
 FORMS += \
     mainwindow.ui

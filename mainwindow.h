@@ -12,6 +12,15 @@
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
+class interface : public QObject
+{
+public:
+    virtual ~interface() = default;
+    virtual QString getString(QString str) = 0;
+
+};
+
+Q_DECLARE_INTERFACE(interface,"t.2kL1EpX_fMa2Z3YFM8gLixrgXqZpZl5YiugRYhmb-1PpdF3UY8kF4ihOYYChEHMiQ2yahqJcHcWU3PPHH0Emhw");
 
 class MainWindow : public QMainWindow
 {
@@ -23,10 +32,10 @@ public:
 
 private slots:
     void on_pB_cons_clicked();
-    void replyFinished();
+    void on_searchPlugin_clicked();
 
 private:
     Ui::MainWindow *ui;
-    QNetworkAccessManager *man;
+    interface *plugin;
 };
 #endif // MAINWINDOW_H
