@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 #include <QFile>
+#include <QSslSocket>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -9,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     down = new Downloader(this);
+    QSslSocket socket;
 
     connect(down,SIGNAL(downloadProgress(quint64,quint64)),this,SLOT(slotDownloadProgress(quint64,quint64)));
     connect(down,SIGNAL(done(const QUrl&,const QByteArray&)),this, SLOT(slotDone(const QUrl&,const QByteArray &)));
