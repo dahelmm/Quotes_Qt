@@ -14,11 +14,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->tin = new QOAuth2AuthorizationCodeFlow(this);
-    this->tin->setScope("email");
-//    this->tin->setToken("t.2kL1EpX_fMa2Z3YFM8gLixrgXqZpZl5YiugRYhmb-1PpdF3UY8kF4ihOYYChEHMiQ2yahqJcHcWU3PPHH0Emhw");
+    down = new Downloader(this);
 
-    connect(this->tin,&QOAuth2AuthorizationCodeFlow::authorizeWithBrowser,&QDesktopServices::openUrl);
+
 }
 
 MainWindow::~MainWindow()
